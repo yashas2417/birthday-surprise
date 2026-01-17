@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Wifeyy 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:'Georgia',serif;
+    background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a6c1ee);
+    background-size:400% 400%;
+    animation:bg 15s infinite;
+    overflow-x:hidden;
+}
+@keyframes bg{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.container{
+    text-align:center;
+    padding:40px 20px;
+    color:white;
+}
+
+h1{
+    font-size:clamp(2.5em,7vw,4.2em);
+    animation:glow 2s infinite;
+}
+@keyframes glow{
+    50%{text-shadow:0 0 30px pink;transform:scale(1.05);}
+}
+
+.subtitle{
+    font-size:1.4em;
+    margin-bottom:30px;
+}
+
+button{
+    padding:16px 40px;
+    border-radius:40px;
+    border:none;
+    font-size:1.2em;
+    cursor:pointer;
+    background:linear-gradient(45deg,#ff6b6b,#feca57,#ff9ff3);
+    color:white;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.hidden{display:none;}
+
+.cake{
+    font-size:120px;
+    animation:pop 1.5s ease;
+    margin:30px 0;
+}
+@keyframes pop{
+    0%{transform:scale(0)}
+    100%{transform:scale(1)}
+}
+
+.wishes{
+    font-size:1.5em;
+    margin:30px auto;
+    max-width:700px;
+    line-height:1.6;
+    animation:fade 2s ease;
+}
+@keyframes fade{
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.gallery{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+    animation:fadeUp 1.5s forwards;
+    opacity:0;
+}
+@keyframes fadeUp{
+    to{opacity:1;transform:translateY(0)}
+}
+
+.final{
+    font-size:1.8em;
+    margin-top:40px;
+    animation:pop 1.5s ease;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Happy Birthday Wifeyy 🎂💖</h1>
+    <p class="subtitle">To my forever, my home, my heart 💕</p>
+
+    <button onclick="startSurprise()">Tap for Your Surprise 💝</button>
+
+    <div id="cakeSection" class="hidden">
+        <div class="cake">🎂🕯️✨</div>
+
+        <div class="wishes">
+            Happy Birthday my love ❤️<br><br>
+            Every smile of yours is my happiness,  
+            every tear of yours is my pain.  
+            You are my best friend, my soulmate,  
+            my today and all my tomorrows 💞<br><br>
+            I promise to love you louder on hard days  
+            and softer on tired days 💑  
+        </div>
+
+        <button onclick="showMemories()">See Our Memories 📸</button>
+    </div>
+
+    <div id="memories" class="hidden">
+        <h2>Our Beautiful Moments 💖</h2>
+
+        <div class="gallery">
+    <img src="Screenshot_20251020_231357.jpg" alt="Memory 1">
+    <img src="1.jpg" alt="Memory 2">
+    <img src="2.jpg" alt="Memory 3">
+    <img src="3.jpg" alt="Memory 4">
+    <img src="Screenshot 2025-09-03 185739.png" alt="Memory 5">
+    <img src="Screenshot 2025-09-08 193247.png" alt="Memory 6">
+    <img src="Screenshot 2025-11-09 092941.png" alt="Memory 7">
+</div>
+
+
+        <div class="final">
+            I love you more than words can ever say 🌙❤️<br>
+            Forever yours, always 💍
+        </div>
+    </div>
+</div>
+
+<script>
+function startSurprise(){
+    document.getElementById("cakeSection").classList.remove("hidden");
+}
+
+function showMemories(){
+    document.getElementById("memories").classList.remove("hidden");
+    document.querySelectorAll(".gallery img").forEach((img,i)=>{
+        img.style.animationDelay=(i*0.3)+"s";
+    });
+}
+</script>
+
+</body>
+</html>
